@@ -29,7 +29,7 @@ namespace VirtualBlackboard.ViewModel
             DeleteCommand = new RelayCommand<Project>(Delete);
 
             //the last Entry :)
-            AllSheetCollections.Add(new Project() { DisplayText = "Neues Projekt erstellen" });
+            AllSheetCollections.Add(new Project() { DisplayText = Properties.Resources.New_Project });
 
 
         }
@@ -41,12 +41,12 @@ namespace VirtualBlackboard.ViewModel
             AllSheetCollections.Clear();
             sheets.ToList().ForEach(x => AllSheetCollections.Add(x));
 
-            AllSheetCollections.Add(new Project() { DisplayText = "Neues Projekt erstellen" });
+            AllSheetCollections.Add(new Project() { DisplayText = Properties.Resources.New_Project });
         }
 
         private void DoubleClick(Project obj)
         {
-            if(obj.DisplayText=="Neues Projekt erstellen")
+            if(obj.DisplayText == Properties.Resources.New_Project)
             {
                 Messenger.Trigger("LoadCreateNewProject",null);
             }

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VirtualBlackboard.Views"
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
-
+xmlns:p="clr-namespace:VirtualBlackboard.Properties"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="VirtualBlackboard.Views.CreateNewProjectUserControll"
              mc:Ignorable="d" 
  
@@ -24,7 +24,7 @@
         <Grid.ColumnDefinitions>
 </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-            <Label Foreground="#9C27B0"  FontFamily="{StaticResource Beba}" VerticalAlignment="Center" Content="Name:" FontSize="25"  />
+            <Label Foreground="#9C27B0"  FontFamily="{StaticResource Beba}" VerticalAlignment="Center" Content="{x:Static p:Resources.Name}" FontSize="25"  />
             <TextBox   Text="{Binding ProjectName}"  VerticalAlignment="Center" mah:TextBoxHelper.Watermark="Projekt Name" Width="250" />
         </StackPanel>
         <DataGrid   CanUserSortColumns="False" FontSize="25" Margin="3,3,3,9" AutoGenerateColumns="False" Grid.Row="1" ItemsSource="{Binding Sheets}" HorizontalScrollBarVisibility="Hidden">
@@ -33,13 +33,13 @@
                 <DropShadowEffect Opacity="0.5"/>
             </DataGrid.Effect>
             <DataGrid.Columns>
-                <DataGridTextColumn  FontSize="20"  Width="1920"  Header="Anzeige Name" FontFamily="#Arial" Binding="{Binding DisplayText}" />
+                <DataGridTextColumn  FontSize="20"  Width="1920"  Header="{x:Static p:Resources.Display_Name}" FontFamily="#Arial" Binding="{Binding DisplayText}" />
             </DataGrid.Columns>
         </DataGrid>
         <Button   Grid.Row="3" FontSize="25"  Command="{Binding CreateCommand}">
             <StackPanel Orientation="Horizontal">
                 <Label Content="&#xf067;" FontFamily="{StaticResource Awesome}" Margin="0,3,0,0" Foreground="GreenYellow" />
-                <Label  Content="Create" FontFamily="{StaticResource Beba}" FontSize="25"/>
+                <Label  Content="{x:Static p:Resources.Create}" FontFamily="{StaticResource Beba}" FontSize="25"/>
       
             </StackPanel>
         </Button>

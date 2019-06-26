@@ -14,7 +14,7 @@ namespace VirtualBlackboard.Converter
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             string displayname = value as string;
-            if (displayname == "Neues Projekt erstellen")
+            if (displayname == Properties.Resources.New_Project)
                 return Visibility.Visible;
             return Visibility.Collapsed;
         }

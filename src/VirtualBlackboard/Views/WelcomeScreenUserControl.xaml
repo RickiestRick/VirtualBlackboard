@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VirtualBlackboard.Views"
              mc:Ignorable="d" 
+              xmlns:p="clr-namespace:VirtualBlackboard.Properties"
              x:Name="WelcomeScreenUC"
              xmlns:conv="clr-namespace:VirtualBlackboard.Converter"
 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
@@ -35,7 +36,7 @@ xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <Label Margin="0,6,0,0" HorizontalAlignment="Center" Content="&#xf24a;" Foreground="#9C27B0" Grid.Row="0" FontSize="27"  FontFamily="{StaticResource Awesome}"/>
-            <Label Content="Aktuelle Projekte" Foreground="#9C27B0" Grid.Row="0" FontSize="30"  FontFamily="{StaticResource Beba}"/>
+            <Label Content="{x:Static p:Resources.New_Project}" Foreground="#9C27B0" Grid.Row="0" FontSize="30"  FontFamily="{StaticResource Beba}"/>
         </StackPanel>
         <ListBox Grid.Row="1" ItemsSource="{Binding AllSheetCollections}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemsPanel>

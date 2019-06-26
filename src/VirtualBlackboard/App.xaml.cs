@@ -13,5 +13,12 @@ namespace VirtualBlackboard
     /// </summary>
     public partial class App : Application
     {
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture =
+            new System.Globalization.CultureInfo("en");
+            base.OnStartup(e);
+        }
     }
 }
